@@ -6,28 +6,33 @@ function Journal(title, body){
 
 Journal.prototype.wordCount = function() {
   var bodySplit =  this.body.split(" ");
-  return bodySplit.length();
+  return bodySplit.length;
 };
 
-module.exports = Journal;
+exports.Journal = Journal;
 
 },{}],2:[function(require,module,exports){
-var journal = require('./../js/journal.js').Journal;
 
-var journal = require('./../js/journal.js').Journal;
 
-var count = -1;
+var Journal = require('./../js/journal.js').Journal;
+console.log(Journal)
+var count = 0;
+var jTitle;
+var jBody;
+var newEntry;
 
 $(document).ready(function(){
   $('#journal').submit(function(event){
     event.preventDefault();
-    var title = $('#title').val();
-    var body = $('#body').val();
+    jTitle = $('#title').val();
+    jBody = $('#body').val();
+    newEntry = new Journal(jTitle, jBody);
     $('.journal-list ol').append('<li class="journal-item' + (count+1).toString() + '"></li>');
     count + 1;
-    $('.journal-list ol li:last-child').text(title);
-    $('#journalTitle').text(title);
-    $('#journalBody').text(body);
+    $('.journal-list ol li:last-child').text(jTitle);
+    $('#journalTitle').text(jTitle);
+    $('#journalBody').text(jBody);
+    $('#wordCount').append(newEntry.wordCount());
   });
 });
 

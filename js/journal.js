@@ -5,7 +5,7 @@ function Journal(title, body){
 
 Journal.prototype.wordCount = function() {
   var bodySplit =  this.body.split(" ");
-  return bodySplit.length();
+  return bodySplit.length;
 };
 
-module.exports = Journal;
+exports.Journal = Journal;
