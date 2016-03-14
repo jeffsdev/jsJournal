@@ -1,11 +1,18 @@
 var journal = require('./../js/journal.js').Journal;
 
+var journal = require('./../js/journal.js').Journal;
+
+var count = -1;
+
 $(document).ready(function(){
-  $('#signUp').submit(function(event){
+  $('#journal').submit(function(event){
     event.preventDefault();
     var title = $('#title').val();
     var body = $('#body').val();
-    $('#journalTitle').append(title);
-    $('#journalBody').append(body);
+    $('.journal-list ol').append('<li class="journal-item' + (count+1).toString() + '"></li>');
+    count + 1;
+    $('.journal-list ol li:last-child').text(title);
+    $('#journalTitle').text(title);
+    $('#journalBody').text(body);
   });
 });
