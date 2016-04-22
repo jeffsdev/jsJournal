@@ -2,16 +2,14 @@
 By Jeff Seymour
 
 ## Description
-A journaling website where a user can write entries including at least a title and body, with entry objects that include a method to return the number of words in the entry.
+A journaling website where a user can write entries including at least a title and body.
 
 ## Technologies Used
-HTML, CSS, SCSS, npm, Gulp.js
+HTML, CSS, npm, Gulp.js
 
 ## Setup  
 Clone Repository    
 ```npm install```  
-```gulp build```  
-```gulp serve```  
 View in browser at localhost:3000
 
 ## License
